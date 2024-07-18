@@ -16,10 +16,10 @@ lint:
 test:
 	go test -v
 
-build: format get
+linux: format get
 	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${shell dpkg --print-architecture} go build -v -o kbot -ldflags "-X="github.com/ro-mus/kbot/cmd.appVersion=${VERSION}
 
-image: build
+image: linux
 	docker build . -t ${REGISTRY}/${APP}:${VERSION}-$(TARGET_ARC)
 
 push: image
@@ -28,5 +28,5 @@ push: image
 	
 clean:
 	rm -rf kbot
-	IMG1=$$(docker images -q | head -n 1); \
-	if [ -n "$${IMG1}" ]; then  docker rmi -f $${IMG1}; else printf "$RImage not found$D\n"; fi
+	IMAGE_TAG=$$(docker images -q | head -n 1); \
+	if [ -n "$${IMAGE_TAG}" ]; then  docker rmi -f $${IMAGE_TAG}; else printf "$RImage not found$D\n"; fi
