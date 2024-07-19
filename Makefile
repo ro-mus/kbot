@@ -23,7 +23,7 @@ linux: format get
 	CGO_ENABLED=0 GOOS=linux GOARCH=${shell dpkg --print-architecture} go build -v -o kbot -ldflags "-X="github.com/ro-mus/kbot/cmd.appVersion=${VERSION}
 	docker build . -t ${REGISTRY}/${APP}:${VERSION}-$(TARGET_ARC)
 
-image: build
+image: 
 	docker build . -t ${REGISTRY}/${APP}:${VERSION}-$(TARGET_ARC)
 
 push: image
