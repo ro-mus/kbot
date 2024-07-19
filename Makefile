@@ -25,7 +25,6 @@ linux: format get
 
 image: build
 	docker build . -t ${REGISTRY}/${APP}:${VERSION}-$(TARGET_ARC)
-	echo "${REGISTRY}/${APP}:${VERSION}-${TARGET_ARC}" > image_tag.txt
 
 push: image
 	docker tag ${REGISTRY}/${APP}:${VERSION}-${TARGET_ARC} ${REGISTRY}/${APP}:${VERSION}-${TARGET_ARC}
