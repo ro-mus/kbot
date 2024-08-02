@@ -1,0 +1,16 @@
+# Default values for helm.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: rmusiiuk
+  tag: "v1.0.4-4e4f71d-amd64"
+  arch: amd64
+secret:
+  name: "kbot"
+  tokenName: "TELE_TOKEN"
+  tokenKey: token
+securityContext:
+  privileged: true
