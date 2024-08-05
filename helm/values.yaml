@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: rmusiiuk
-  tag: "v1.0.4-4e4f71d-amd64"
+  tag: "v1.0.4-5f03041"
   arch: amd64
 secret:
   name: "kbot"
