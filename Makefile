@@ -27,7 +27,7 @@ image:
 	docker build . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGET_ARC}
 
 push: image
-	docker tag ${REGISTRY}/${APP}:${VERSION}-${TARGET_ARC} ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGET_ARC}
+	docker tag ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGET_ARC} ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGET_ARC}
 	docker push ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGET_ARC}
 	
 clean:
