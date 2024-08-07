@@ -5,7 +5,7 @@
 replicaCount: 1
 image:
   repository: rmusiiuk
-  tag: "v1.0.4-8a16d09"
+  tag: "v1.0.4-f818120"
   arch: ""
   os: ""
 secret:
