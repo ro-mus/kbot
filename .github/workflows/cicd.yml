@@ -15,12 +15,13 @@ jobs:
 
       - name: Run test
         run: make test
+
       - name: 'Login to GHCR'
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GHCR_TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Build&Push
         env:
