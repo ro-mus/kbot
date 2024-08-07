@@ -1,7 +1,7 @@
 APP=$(shell basename $(shell git remote get-url origin) | sed 's/\.git$$//')
 REGISTRY=ghcr.io/ro-mus
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
-TARGETOS=linux #windows darwin 
+TARGETOS=linux
 TARGET_ARC=amd64
 
 format:
