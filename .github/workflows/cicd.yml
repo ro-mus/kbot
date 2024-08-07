@@ -18,4 +18,7 @@ jobs:
       - name: GHCR login
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
           
-
+      - name: Build&Push
+        env:
+          APP: "kbot"
+        run: make image push
