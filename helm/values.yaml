@@ -4,10 +4,11 @@
 
 replicaCount: 1
 image:
-  repository: rmusiiuk
+  registry: "ghcr.io"
+  repository: "ro-mus/kbot"
   tag: "v1.0.4-8a16d09"
-  arch: ""
-  os: ""
+  arch: "amd64"
+  os: "linux"
 secret:
   name: "kbot"
   tokenName: "TELE_TOKEN"
