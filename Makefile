@@ -24,10 +24,9 @@ linux: format get
 	docker build . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGET_ARC}
 
 image: 
-	docker build . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGET_ARC}
+	docker build . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGET_ARC} --build-arg TARGETOS=${TARGETOS} --build-arg TARGETARCH=${TARGETARCH}
 
-push: image
-	docker tag ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGET_ARC} ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGET_ARC}
+push:
 	docker push ${REGISTRY}/${APP}:${VERSION}-${TARGETOS}-${TARGET_ARC}
 	
 clean:
