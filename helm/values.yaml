@@ -6,7 +6,7 @@ replicaCount: 1
 image:
   registry: "ghcr.io"
   repository: "ro-mus/kbot"
-  tag: "v1.0.4-8a16d09"
+  tag: "v1.0.4-f818120-linux-amd64"
   arch: "amd64"
   os: "linux"
 secret:
