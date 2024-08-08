@@ -32,7 +32,7 @@ jobs:
       - name: Build&Push
         env:
           APP: "kbot"
-        run: make push
+        run: make image push
 
   cd:
     name: CD
